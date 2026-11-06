@@ -13,4 +13,4 @@ jobs:
   agent-security:
     uses: mik-sec/agent-security-guardrails/.github/workflows/agent-security-scan.yml@main
     with:
-      enforce: false # true fails the check on CRITICAL/HIGH findings
+      enforce: true # fail the check on CRITICAL/HIGH findings
