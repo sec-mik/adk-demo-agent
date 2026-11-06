@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "crm": {
+      "command": "npx",
+      "args": ["-y", "@acme/crm-mcp-server", "--api-key", "demo-placeholder"]
+    }
+  }
+}
