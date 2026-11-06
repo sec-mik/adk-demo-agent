@@ -40,6 +40,15 @@ def get_status(customer_id: str, order_id: str) -> dict[str, str]:
   return {"order_id": order_id, "status": order["status"]}
 
 
+def list_for_customer(customer_id: str) -> list[dict[str, str]]:
+  """Returns the orders that belong to `customer_id`."""
+  return [
+      {"order_id": order_id, "status": order["status"]}
+      for order_id, order in _ORDERS.items()
+      if order["customer_id"] == customer_id
+  ]
+
+
 def open_refund_request(customer_id: str, order_id: str, reason: str) -> dict[str, str]:
   """Records a refund request for review by the support team."""
   if _owned_order(customer_id, order_id) is None:
